@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GamesRent.Models;
-
+using System.Data.Entity;
 
 namespace GamesRent.Controllers
 {
@@ -24,7 +24,7 @@ namespace GamesRent.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.ToList(); 
+            var customers = _context.Customers.Include(c => c.MemberShipType).ToList(); 
 
             return View(customers);
         }
