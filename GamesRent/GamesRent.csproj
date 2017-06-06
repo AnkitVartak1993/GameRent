@@ -182,12 +182,21 @@
     <Compile Include="Migrations\201706061957161_AddedCustomerfields.Designer.cs">
       <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061959372_AddedMembership.cs" />
+    <Compile Include="Migrations\201706061959372_AddedMembership.Designer.cs">
+      <DependentUpon>201706061959372_AddedMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706062001419_changedCustomerfields.cs" />
+    <Compile Include="Migrations\201706062001419_changedCustomerfields.Designer.cs">
+      <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
@@ -268,6 +277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061957161_AddedCustomerfields.resx">
       <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061959372_AddedMembership.resx">
+      <DependentUpon>201706061959372_AddedMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062001419_changedCustomerfields.resx">
+      <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
