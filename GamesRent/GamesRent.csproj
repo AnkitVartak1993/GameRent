@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201706061801220_initialModel.Designer.cs">
       <DependentUpon>201706061801220_initialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706061957161_AddedCustomerfields.cs" />
+    <Compile Include="Migrations\201706061957161_AddedCustomerfields.Designer.cs">
+      <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -261,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706061801220_initialModel.resx">
       <DependentUpon>201706061801220_initialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061957161_AddedCustomerfields.resx">
+      <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

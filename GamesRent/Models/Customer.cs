@@ -11,5 +11,8 @@ namespace GamesRent.Models
 
         public String Name { get; set; }
 
+        public bool IsSubscribedtoNews { get; set; }
+
+       
     }
 }
