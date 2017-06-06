@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -193,6 +194,10 @@
     <Compile Include="Migrations\201706062005379_populateMembership.cs" />
     <Compile Include="Migrations\201706062005379_populateMembership.Designer.cs">
       <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706062019241_appliedAnnotations.cs" />
+    <Compile Include="Migrations\201706062019241_appliedAnnotations.Designer.cs">
+      <DependentUpon>201706062019241_appliedAnnotations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -263,6 +268,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Games\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -290,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706062005379_populateMembership.resx">
       <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062019241_appliedAnnotations.resx">
+      <DependentUpon>201706062019241_appliedAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
