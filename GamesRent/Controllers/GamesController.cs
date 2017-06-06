@@ -15,5 +15,12 @@ namespace GamesRent.Controllers
             var game = new Game() { Name = "GTA 5" };
             return View(game);
         }
+
+        [Route("games/released/{year}/{month}")]
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+
+            return View();
+        }
     }
 }
