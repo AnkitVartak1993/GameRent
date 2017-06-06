@@ -190,6 +190,10 @@
     <Compile Include="Migrations\201706062001419_changedCustomerfields.Designer.cs">
       <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706062005379_populateMembership.cs" />
+    <Compile Include="Migrations\201706062005379_populateMembership.Designer.cs">
+      <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -283,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706062001419_changedCustomerfields.resx">
       <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062005379_populateMembership.resx">
+      <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
