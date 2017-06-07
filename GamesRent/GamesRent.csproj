@@ -179,6 +179,10 @@
     <Compile Include="Migrations\201706070035356_abc3.Designer.cs">
       <DependentUpon>201706070035356_abc3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706072333101_AddedMigrationtype.cs" />
+    <Compile Include="Migrations\201706072333101_AddedMigrationtype.Designer.cs">
+      <DependentUpon>201706072333101_AddedMigrationtype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -265,6 +269,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706070035356_abc3.resx">
       <DependentUpon>201706070035356_abc3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706072333101_AddedMigrationtype.resx">
+      <DependentUpon>201706072333101_AddedMigrationtype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,6 +14,6 @@ namespace GamesRent.Models
         public byte DiscountRate { get; set; }
 
 
-
+        public string Membershiptype { get; set; }
     }
 }
