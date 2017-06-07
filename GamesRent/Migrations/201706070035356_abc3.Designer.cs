@@ -7,13 +7,13 @@ namespace GamesRent.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changedCustomerfields : IMigrationMetadata
+    public sealed partial class abc3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedCustomerfields));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(abc3));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706062001419_changedCustomerfields"; }
+            get { return "201706070035356_abc3"; }
         }
         
         string IMigrationMetadata.Source

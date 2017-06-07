@@ -175,29 +175,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706061801220_initialModel.cs" />
-    <Compile Include="Migrations\201706061801220_initialModel.Designer.cs">
-      <DependentUpon>201706061801220_initialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061957161_AddedCustomerfields.cs" />
-    <Compile Include="Migrations\201706061957161_AddedCustomerfields.Designer.cs">
-      <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706061959372_AddedMembership.cs" />
-    <Compile Include="Migrations\201706061959372_AddedMembership.Designer.cs">
-      <DependentUpon>201706061959372_AddedMembership.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706062001419_changedCustomerfields.cs" />
-    <Compile Include="Migrations\201706062001419_changedCustomerfields.Designer.cs">
-      <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706062005379_populateMembership.cs" />
-    <Compile Include="Migrations\201706062005379_populateMembership.Designer.cs">
-      <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706062019241_appliedAnnotations.cs" />
-    <Compile Include="Migrations\201706062019241_appliedAnnotations.Designer.cs">
-      <DependentUpon>201706062019241_appliedAnnotations.cs</DependentUpon>
+    <Compile Include="Migrations\201706070035356_abc3.cs" />
+    <Compile Include="Migrations\201706070035356_abc3.Designer.cs">
+      <DependentUpon>201706070035356_abc3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -283,23 +263,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706061801220_initialModel.resx">
-      <DependentUpon>201706061801220_initialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061957161_AddedCustomerfields.resx">
-      <DependentUpon>201706061957161_AddedCustomerfields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061959372_AddedMembership.resx">
-      <DependentUpon>201706061959372_AddedMembership.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706062001419_changedCustomerfields.resx">
-      <DependentUpon>201706062001419_changedCustomerfields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706062005379_populateMembership.resx">
-      <DependentUpon>201706062005379_populateMembership.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706062019241_appliedAnnotations.resx">
-      <DependentUpon>201706062019241_appliedAnnotations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706070035356_abc3.resx">
+      <DependentUpon>201706070035356_abc3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
