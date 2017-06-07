@@ -207,6 +207,18 @@
     <Compile Include="Migrations\201706062354547_addedattrinGames.Designer.cs">
       <DependentUpon>201706062354547_addedattrinGames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706070000579_ReleasedateAdded.cs" />
+    <Compile Include="Migrations\201706070000579_ReleasedateAdded.Designer.cs">
+      <DependentUpon>201706070000579_ReleasedateAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706070003238_GamesAdded.cs" />
+    <Compile Include="Migrations\201706070003238_GamesAdded.Designer.cs">
+      <DependentUpon>201706070003238_GamesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706070008407_abc3.cs" />
+    <Compile Include="Migrations\201706070008407_abc3.Designer.cs">
+      <DependentUpon>201706070008407_abc3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -314,6 +326,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706062354547_addedattrinGames.resx">
       <DependentUpon>201706062354547_addedattrinGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706070000579_ReleasedateAdded.resx">
+      <DependentUpon>201706070000579_ReleasedateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706070003238_GamesAdded.resx">
+      <DependentUpon>201706070003238_GamesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706070008407_abc3.resx">
+      <DependentUpon>201706070008407_abc3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
