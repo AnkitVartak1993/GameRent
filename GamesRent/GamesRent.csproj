@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201706072333101_AddedMigrationtype.Designer.cs">
       <DependentUpon>201706072333101_AddedMigrationtype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706072343164_addedBirthday-to-Customers.cs" />
+    <Compile Include="Migrations\201706072343164_addedBirthday-to-Customers.Designer.cs">
+      <DependentUpon>201706072343164_addedBirthday-to-Customers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -272,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706072333101_AddedMigrationtype.resx">
       <DependentUpon>201706072333101_AddedMigrationtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706072343164_addedBirthday-to-Customers.resx">
+      <DependentUpon>201706072343164_addedBirthday-to-Customers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

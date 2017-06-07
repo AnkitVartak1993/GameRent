@@ -19,5 +19,7 @@ namespace GamesRent.Models
 
         public byte MembershipTypeId { get; set; }
 
+        public DateTime? BirthDate { get; set; }
+
     }
 }
