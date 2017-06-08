@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using GamesRent.Models;
 using System.Data.Entity;
-
+using GamesRent.ViewModels;
 namespace GamesRent.Controllers
 {
     public class CustomersController : Controller
@@ -37,6 +37,15 @@ namespace GamesRent.Controllers
                 return HttpNotFound();
 
             return View(customer);
+        }
+
+        public ActionResult New()
+        {
+            var MembershipType = _context.MembershipType.ToList();
+            var viewModel = new CustomerViewModel {MembershipType = MembershipType };
+
+
+            return View(viewModel);
         }
 
 

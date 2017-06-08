@@ -17,6 +17,7 @@ namespace GamesRent.Models
         public bool IsSubscribedtoNews { get; set; }
         public MembershipType MemberShipType { get; set; }
 
+        [Display(Name ="Membership Type")]
         public byte MembershipTypeId { get; set; }
 
         public DateTime? BirthDate { get; set; }
