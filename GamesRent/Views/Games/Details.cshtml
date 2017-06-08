@@ -1,0 +1,30 @@
+﻿@model GamesRent.Models.Game
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th><b>Game</b></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Genre: @Model.Genre</td>
+        </tr>
+        <tr>
+            <td>Game Left in Stock: @Model.InStock</td>
+        </tr>
+        <tr>
+            <td>Game Released on:  @Model.ReleaseDate</td>
+        </tr>
+
+    </tbody>
+</table>
+

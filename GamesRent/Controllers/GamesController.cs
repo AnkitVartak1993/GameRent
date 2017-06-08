@@ -9,11 +9,21 @@ namespace GamesRent.Controllers
 {
     public class GamesController : Controller
     {
+        private ApplicationDbContext _context;
         // GET: Games
+
+            public GamesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         public ActionResult Index()
         {
-            var game = new Game() { Name = "GTA 5" };
-            return View(game);
+            var games = _context.Games.ToList();
+            return View(games);
         }
 
         [Route("games/released/{year}/{month}")]
@@ -21,6 +31,16 @@ namespace GamesRent.Controllers
         {
 
             return View();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var game = _context.Games.SingleOrDefault(g => g.Id == id);
+
+            if (game == null)
+                return HttpNotFound();
+
+            return View(game);
         }
     }
 }

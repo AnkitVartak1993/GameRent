@@ -1,8 +1,31 @@
-﻿@model GamesRent.Models.Game
-@{
+﻿@model IEnumerable<GamesRent.Models.Game>
+    @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>@Model.Name</h2>
+    }
+                      <h2>Customers</h2>
+                      @if (!Model.Any())
+                      {
+                      <p>We don't have any Games yet.</p>
+                      }
+                      else
+                      {
+                      <table class="table table-bordered table-hover">
+                          <thead>
+                              <tr>
+                                  <th>Game</th>
+                                  <th>Genre </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              @foreach (var game in Model)
+                              {
+                              <tr>
+                                  <td>@Html.ActionLink(game.Name, "Details", "Games", new { id = game.Id }, null)</td>
+                                  <td>@game.Genre</td>
+                              </tr>
+                              }
+                          </tbody>
+                      </table>
+                      }
 
