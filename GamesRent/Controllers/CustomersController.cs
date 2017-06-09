@@ -49,6 +49,49 @@ namespace GamesRent.Controllers
         }
 
 
-       
+        [HttpPost]
+        public ActionResult Save (Customer customer)
+        {
+
+            if (customer.Id == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else
+            {
+
+                var customerUpdate = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerUpdate.Id = customer.Id;
+                customerUpdate.BirthDate = customer.BirthDate;
+                customerUpdate.IsSubscribedtoNews = customer.IsSubscribedtoNews;
+                customerUpdate.MemberShipType = customer.MemberShipType;
+                customerUpdate.Name = customer.Name;
+
+            }
+
+            
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Customers");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerViewModel
+            {
+                Customer = customer,
+             MembershipType = _context.MembershipType.ToList()
+
+            };
+           return View("New",viewModel);
+
+        }
+
     }
 }
