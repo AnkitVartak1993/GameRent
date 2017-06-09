@@ -53,8 +53,14 @@ namespace GamesRent.Controllers
         [HttpPost]
         public ActionResult Save(Game game)
         {
+            if (!ModelState.IsValid)
+            {
+                var GameModel = new Game { };
+               
+                return View("New", GameModel);
+            }
 
-            if (game.Id == 0)
+                if (game.Id == 0)
             {
                 _context.Games.Add(game);
             }

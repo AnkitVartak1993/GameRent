@@ -187,6 +187,10 @@
     <Compile Include="Migrations\201706072343164_addedBirthday-to-Customers.Designer.cs">
       <DependentUpon>201706072343164_addedBirthday-to-Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706092125534_ValidationAdded.cs" />
+    <Compile Include="Migrations\201706092125534_ValidationAdded.Designer.cs">
+      <DependentUpon>201706092125534_ValidationAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -284,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706072343164_addedBirthday-to-Customers.resx">
       <DependentUpon>201706072343164_addedBirthday-to-Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706092125534_ValidationAdded.resx">
+      <DependentUpon>201706092125534_ValidationAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
