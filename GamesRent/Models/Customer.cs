@@ -20,6 +20,7 @@ namespace GamesRent.Models
         [Display(Name ="Membership Type")]
         public byte MembershipTypeId { get; set; }
 
+        [Min18year]
         public DateTime? BirthDate { get; set; }
 
     }
