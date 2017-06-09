@@ -53,6 +53,19 @@ namespace GamesRent.Controllers
         public ActionResult Save (Customer customer)
         {
 
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerViewModel
+                {
+                    Customer = customer,
+                    MembershipType = _context.MembershipType.ToList()
+
+                };
+                return View("New", viewModel);
+
+
+            }
             if (customer.Id == 0)
             {
                 _context.Customers.Add(customer);
