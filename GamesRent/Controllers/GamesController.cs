@@ -42,5 +42,54 @@ namespace GamesRent.Controllers
 
             return View(game);
         }
+
+        public ActionResult New()
+        {
+            var GameView = new Game();
+
+            return View(GameView);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Game game)
+        {
+
+            if (game.Id == 0)
+            {
+                _context.Games.Add(game);
+            }
+            else
+            {
+
+                var gameUpdate = _context.Games.Single(c => c.Id == game.Id);
+
+                gameUpdate.Id = game.Id;
+                gameUpdate.InStock = game.InStock;
+                gameUpdate.GameAdded = game.GameAdded;
+                gameUpdate.Genre = game.Genre;
+                gameUpdate.Name = game.Name;
+                gameUpdate.ReleaseDate = game.ReleaseDate;
+
+
+            }
+
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Games");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var game = _context.Games.SingleOrDefault(c => c.Id == id);
+
+            if (game == null)
+                return HttpNotFound();
+
+            var GameModel = game;
+           
+            return View("New", GameModel);
+
+        }
     }
 }

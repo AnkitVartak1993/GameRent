@@ -3,13 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     }
-                      <h2>Customers</h2>
+                      <h2>Games</h2>
                       @if (!Model.Any())
                       {
                       <p>We don't have any Games yet.</p>
                       }
                       else
                       {
+                        <button class="btn btn-primary">@Html.ActionLink("New","New")</button>
                       <table class="table table-bordered table-hover">
                           <thead>
                               <tr>
@@ -21,7 +22,7 @@
                               @foreach (var game in Model)
                               {
                               <tr>
-                                  <td>@Html.ActionLink(game.Name, "Details", "Games", new { id = game.Id }, null)</td>
+                                  <td>@Html.ActionLink(game.Name, "Edit", "Games", new { id = game.Id }, null)</td>
                                   <td>@game.Genre</td>
                               </tr>
                               }
