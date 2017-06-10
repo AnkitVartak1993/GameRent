@@ -21,7 +21,7 @@ namespace GamesRent.Dtos
         //[Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
 
-        [Min18year]
+        //[Min18year]
         public DateTime? BirthDate { get; set; }
 
 

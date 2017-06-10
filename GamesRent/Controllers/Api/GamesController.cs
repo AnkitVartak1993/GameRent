@@ -4,70 +4,70 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+
 using GamesRent.Models;
 using GamesRent.Dtos;
 using AutoMapper;
 namespace GamesRent.Controllers.Api
 {
-    public class CustomersController : ApiController
+    public class GamesController : ApiController
     {
-
+        // GET api/<controller>
         private ApplicationDbContext _context;
 
-        public CustomersController(){
-            _context = new ApplicationDbContext();
-            }
-        // GET api/<controller>
-        public IEnumerable<CustomerDto> GetCustomers()
+        public GamesController()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            _context = new ApplicationDbContext();
+        }
+        // GET api/<controller>
+        public IEnumerable<GameDto> GetGames()
+        {
+            return _context.Games.ToList().Select(Mapper.Map<Game, GameDto>);
         }
 
         // GET api/<controller>/5
-        public IHttpActionResult GetCustomer(int id)
+        public IHttpActionResult GetGame(int id)
         {
-            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var game = _context.Games.SingleOrDefault(c => c.Id == id);
 
 
-            if (customer == null)
+            if (game == null)
                 return NotFound();
-            return Ok(Mapper.Map<Customer, CustomerDto>(customer));
+            return Ok(Mapper.Map<Game, GameDto>(game));
         }
         [HttpPost]
         // POST api/<controller>
-        public IHttpActionResult  CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateGame(GameDto gameDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
-            _context.Customers.Add(customer);
+            var game = Mapper.Map<GameDto, Game>(gameDto);
+
+            _context.Games.Add(game);
             _context.SaveChanges();
-            customerDto.Id = customer.Id;
-            return Created( new Uri(Request.RequestUri + "/" +customer.Id),customerDto);
+            gameDto.Id = game.Id;
+            return Created(new Uri(Request.RequestUri + "/" + game.Id), gameDto);
 
         }
 
 
         [HttpPut]
         // PUT api/<controller>/5
-        public void Put(int id, CustomerDto customer)
+        public void Put(int id, GameDto game)
         {
 
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
-            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var gameInDb = _context.Games.SingleOrDefault(c => c.Id == id);
 
-            if (customerInDb == null)
+            if (gameInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             //customerInDb.Name = customer.Name;
             //customerInDb.BirthDate = customer.BirthDate;
             //customerInDb.IsSubscribedtoNews = customer.IsSubscribedtoNews;
             //customerInDb.MembershipTypeId = customer.MembershipTypeId;
-            Mapper.Map(customer, customerInDb);
-
-
-
+            Mapper.Map(game, gameInDb);
             _context.SaveChanges();
         }
 
@@ -78,21 +78,16 @@ namespace GamesRent.Controllers.Api
         {
 
 
-            var customerInDb = _context.Customers.SingleOrDefault(c => c.Id == id);
+            var gameInDb = _context.Games.SingleOrDefault(c => c.Id == id);
 
-            if (customerInDb == null)
+            if (gameInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            _context.Customers.Remove(customerInDb);
+            _context.Games.Remove(gameInDb);
 
             _context.SaveChanges();
 
 
-
-
-
-
-
         }
     }
-}
+    }

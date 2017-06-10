@@ -15,8 +15,11 @@ namespace GamesRent.App_Start
         public MappingProfile()
         {
 
-            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<Customer, CustomerDto>().ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<CustomerDto, Customer>();
+            Mapper.CreateMap<Game, GameDto>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<GameDto, Game>();
+
 
         }
     }
