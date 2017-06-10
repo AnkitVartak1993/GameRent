@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using GamesRent.Models;
+using GamesRent.Dtos;
+using AutoMapper;
 namespace GamesRent.Controllers.Api
 {
     public class CustomersController : ApiController
@@ -16,13 +18,13 @@ namespace GamesRent.Controllers.Api
             _context = new ApplicationDbContext();
             }
         // GET api/<controller>
-        public IEnumerable<Customer> GetCustomers()
+        public IEnumerable<CustomerDto> GetCustomers()
         {
-            return _context.Customers.ToList();
+            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
         }
 
         // GET api/<controller>/5
-        public Customer GetCustomer(int id)
+        public CustomerDto GetCustomer(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
 
@@ -30,26 +32,28 @@ namespace GamesRent.Controllers.Api
             if (customer == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            return customer;
+            return Mapper.Map<Customer, CustomerDto>(customer);
         }
         [HttpPost]
         // POST api/<controller>
-        public Customer  CreateCustomer(Customer customer)
+        public CustomerDto  CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
 
+
+            var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
             _context.SaveChanges();
-
-            return customer;
+            customerDto.Id = customer.Id;
+            return customerDto;
 
         }
 
 
         [HttpPut]
         // PUT api/<controller>/5
-        public void Put(int id, Customer customer)
+        public void Put(int id, CustomerDto customer)
         {
 
             if (!ModelState.IsValid)
@@ -58,11 +62,11 @@ namespace GamesRent.Controllers.Api
 
             if (customerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
-            customerInDb.Name = customer.Name;
-            customerInDb.BirthDate = customer.BirthDate;
-            customerInDb.IsSubscribedtoNews = customer.IsSubscribedtoNews;
-            customerInDb.MembershipTypeId = customer.MembershipTypeId;
-
+            //customerInDb.Name = customer.Name;
+            //customerInDb.BirthDate = customer.BirthDate;
+            //customerInDb.IsSubscribedtoNews = customer.IsSubscribedtoNews;
+            //customerInDb.MembershipTypeId = customer.MembershipTypeId;
+            Mapper.Map(customer, customerInDb);
             _context.SaveChanges();
         }
 

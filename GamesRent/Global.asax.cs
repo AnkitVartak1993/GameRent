@@ -6,13 +6,15 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-
+using AutoMapper;
+using GamesRent.App_Start;
 namespace GamesRent
 {
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(c => c.AddProfile<MappingProfile>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
            // GlobalConfiguration.Configure();
             AreaRegistration.RegisterAllAreas();
