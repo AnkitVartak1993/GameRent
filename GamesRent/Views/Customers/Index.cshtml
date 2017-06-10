@@ -42,22 +42,25 @@
 
 
     $(document).ready(function () {
-        $("#customers .js-delete").on("click", function () {
+        $("#customers ").on("click",".js-delete", function () {
             var btn = $(this);
 
 
+            bootbox.confirm("Are you sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/customers/" + btn.attr("data-customer-id"),
+                        method: "DELETE",
+                        success: function () {
+                            btn.parents("tr").remove();
+                            //location.reload(true);
+                        }
+                    });
 
-            if (confirm("Are you sure?")) {
-                $.ajax({
-                    url: "/api/customers/" + btn.attr("data-customer-id"),
-                    method: "DELETE",
-                    success: function () {
-                        btn.parents("tr").remove();
-                        //location.reload(true);
-                    }
-                })
+                }
 
-            }
+            });
+            
             
         });
     });
