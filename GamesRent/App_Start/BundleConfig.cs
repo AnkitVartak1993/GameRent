@@ -28,6 +28,7 @@ namespace GamesRent
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-a.css",
                       "~/Content/site.css",
+                      "~/Content/typeahead.css",
                       "~/Content/datatables/datatables.bootstrap.css"
                       ));
         }
