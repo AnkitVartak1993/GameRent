@@ -6,6 +6,10 @@ namespace GamesRent.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name = "Contact Number")]
+        public string ContactNo { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
