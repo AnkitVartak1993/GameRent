@@ -39,7 +39,6 @@ namespace GamesRent.Controllers
             return View(customer);
         }
 
-        [Authorize(Roles = "CanManageGames")]
         public ActionResult New()
         {
             var MembershipType = _context.MembershipType.ToList();
@@ -49,7 +48,7 @@ namespace GamesRent.Controllers
             return View(viewModel);
         }
 
-        [Authorize(Roles = "CanManageGames")]
+
         [HttpPost]
         public ActionResult Save (Customer customer)
         {
@@ -90,7 +89,6 @@ namespace GamesRent.Controllers
             return RedirectToAction("Index", "Customers");
         }
 
-        [Authorize(Roles = "CanManageGames")]
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

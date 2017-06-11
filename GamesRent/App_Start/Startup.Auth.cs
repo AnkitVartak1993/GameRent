@@ -55,8 +55,8 @@ namespace GamesRent
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "",
-               appSecret: "");
+               appId: "1791280864536101",
+               appSecret: "51f12dac83209a0d5de7fbc9ebdd7847");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
