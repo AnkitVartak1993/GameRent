@@ -16,7 +16,7 @@ namespace GamesRent.Dtos
         public String Name { get; set; }
 
         public bool IsSubscribedtoNews { get; set; }
-       // public MembershipType MemberShipType { get; set; }
+        public MembershipTypeDto MemberShipType { get; set; }
 
         //[Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }

@@ -7,6 +7,7 @@ using System.Web.Http;
 using GamesRent.Models;
 using GamesRent.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 namespace GamesRent.Controllers.Api
 {
     public class CustomersController : ApiController
@@ -18,9 +19,14 @@ namespace GamesRent.Controllers.Api
             _context = new ApplicationDbContext();
             }
         // GET api/<controller>
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+
+           var customerDtos= _context.Customers.Include(c => c.MemberShipType).ToList().Select(Mapper.Map<Customer, CustomerDto>);
+
+            return Ok(customerDtos);
+
+
         }
 
         // GET api/<controller>/5
