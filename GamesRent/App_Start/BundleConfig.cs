@@ -13,6 +13,7 @@ namespace GamesRent
                         "~/Scripts/bootstrap.js",
                       "~/Scripts/bootbox.js",
                       "~/Scripts/respond.js",
+                       "~/Scripts/typeahead.bundle.js",
                        "~/Scripts/datatables/jquery.datatables.js",
                         "~/Scripts/datatables/datatables.bootstrap.js"));
 
