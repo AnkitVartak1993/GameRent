@@ -15,6 +15,7 @@ namespace GamesRent.Controllers.Api
 
         private ApplicationDbContext _context;
 
+
         public CustomersController(){
             _context = new ApplicationDbContext();
             }
