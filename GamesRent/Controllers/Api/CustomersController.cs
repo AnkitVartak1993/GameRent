@@ -40,6 +40,8 @@ namespace GamesRent.Controllers.Api
                 return NotFound();
             return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
+
+        [Authorize(Roles = "CanManageGames")]
         [HttpPost]
         // POST api/<controller>
         public IHttpActionResult  CreateCustomer(CustomerDto customerDto)
@@ -55,7 +57,7 @@ namespace GamesRent.Controllers.Api
 
         }
 
-
+        [Authorize(Roles = "CanManageGames")]
         [HttpPut]
         // PUT api/<controller>/5
         public void Put(int id, CustomerDto customer)
@@ -78,7 +80,7 @@ namespace GamesRent.Controllers.Api
             _context.SaveChanges();
         }
 
-
+        [Authorize(Roles = "CanManageGames")]
         [HttpDelete]
         // DELETE api/<controller>/5
         public void Delete(int id)
