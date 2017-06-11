@@ -196,6 +196,7 @@
     <Compile Include="Controllers\GamesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GameDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
@@ -238,6 +239,14 @@
     <Compile Include="Migrations\201706112131533_RentalAdded.cs" />
     <Compile Include="Migrations\201706112131533_RentalAdded.Designer.cs">
       <DependentUpon>201706112131533_RentalAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706112146596_namechangedofAttr.cs" />
+    <Compile Include="Migrations\201706112146596_namechangedofAttr.Designer.cs">
+      <DependentUpon>201706112146596_namechangedofAttr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706112155333_AddedGamesoneprop.cs" />
+    <Compile Include="Migrations\201706112155333_AddedGamesoneprop.Designer.cs">
+      <DependentUpon>201706112155333_AddedGamesoneprop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -492,6 +501,7 @@
     <Content Include="Views\Customers\New.cshtml" />
     <Content Include="Views\Games\New.cshtml" />
     <Content Include="Views\Games\ReadOnlyList.cshtml" />
+    <Content Include="Views\Rentals\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -531,6 +541,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706112131533_RentalAdded.resx">
       <DependentUpon>201706112131533_RentalAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706112146596_namechangedofAttr.resx">
+      <DependentUpon>201706112146596_namechangedofAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706112155333_AddedGamesoneprop.resx">
+      <DependentUpon>201706112155333_AddedGamesoneprop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

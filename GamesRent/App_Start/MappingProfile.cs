@@ -20,7 +20,8 @@ namespace GamesRent.App_Start
             Mapper.CreateMap<Game, GameDto>();
             Mapper.CreateMap<GameDto, Game>().ForMember(m => m.Id, opt => opt.Ignore());
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
-           // Mapper.CreateMap<MembershipTypeDto, MembershipType>().ForMember(m => m.Id, opt => opt.Ignore());
+            Mapper.CreateMap<Rental, NewRentalDto>();
+            // Mapper.CreateMap<MembershipTypeDto, MembershipType>().ForMember(m => m.Id, opt => opt.Ignore());
 
         }
     }

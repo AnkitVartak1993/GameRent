@@ -8,6 +8,6 @@ namespace GamesRent.Dtos
     public class NewRentalDto
     {
         public int CustomerId { get; set; }
-        public List<int> MovieIds { get; set; }
+        public List<int> GameIds { get; set; }
     }
 }

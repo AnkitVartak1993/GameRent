@@ -24,6 +24,8 @@ namespace GamesRent.Models
         [Required]
         public DateTime ReleaseDate { get;  set;}
 
+        public int NumbersInStock { get; set; }
+
     }
 
 
