@@ -22,8 +22,14 @@ namespace GamesRent.Controllers
         }
         public ActionResult Index()
         {
-            var games = _context.Games.ToList();
-            return View(games);
+
+            // var games = _context.Games.ToList();
+            // return View(games);
+
+            if (User.IsInRole("CanManageGames"))
+                return View("Index");
+            else
+                return View("ReadOnlyList");
         }
 
         [Route("games/released/{year}/{month}")]
@@ -43,6 +49,7 @@ namespace GamesRent.Controllers
             return View(game);
         }
 
+        [Authorize(Roles ="CanManageGames")]
         public ActionResult New()
         {
             var GameView = new Game();
@@ -50,6 +57,7 @@ namespace GamesRent.Controllers
             return View(GameView);
         }
 
+        [Authorize(Roles = "CanManageGames")]
         [HttpPost]
         public ActionResult Save(Game game)
         {
@@ -85,6 +93,7 @@ namespace GamesRent.Controllers
             return RedirectToAction("Index", "Games");
         }
 
+        [Authorize(Roles = "CanManageGames")]
         public ActionResult Edit(int id)
         {
             var game = _context.Games.SingleOrDefault(c => c.Id == id);
