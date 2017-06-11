@@ -63,7 +63,9 @@ namespace GamesRent.Models
     }
 
     public class RegisterViewModel
-    {
+    {   [Required]
+        [Display(Name = "Contact Number")]
+        public string ContactNo { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

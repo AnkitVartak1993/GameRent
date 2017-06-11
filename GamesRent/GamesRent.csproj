@@ -218,6 +218,14 @@
     <Compile Include="Migrations\201706110424518_seedusers.Designer.cs">
       <DependentUpon>201706110424518_seedusers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706111541578_addedReqContactNo.cs" />
+    <Compile Include="Migrations\201706111541578_addedReqContactNo.Designer.cs">
+      <DependentUpon>201706111541578_addedReqContactNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706111557219_changedContactNoAttr.cs" />
+    <Compile Include="Migrations\201706111557219_changedContactNoAttr.Designer.cs">
+      <DependentUpon>201706111557219_changedContactNoAttr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -497,6 +505,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706110424518_seedusers.resx">
       <DependentUpon>201706110424518_seedusers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111541578_addedReqContactNo.resx">
+      <DependentUpon>201706111541578_addedReqContactNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706111557219_changedContactNoAttr.resx">
+      <DependentUpon>201706111557219_changedContactNoAttr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
