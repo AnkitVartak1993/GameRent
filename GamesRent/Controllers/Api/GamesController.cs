@@ -19,12 +19,28 @@ namespace GamesRent.Controllers.Api
         {
             _context = new ApplicationDbContext();
         }
+
+
+        //Getting List of Games
         // GET api/<controller>
-        public IEnumerable<GameDto> GetGames()
+        public IEnumerable<GameDto> GetGames(string query = null)
         {
-            return _context.Games.ToList().Select(Mapper.Map<Game, GameDto>);
+            var GamesQuery = _context.Games.Where(m => m.NumbersInStock > 0);
+            
+            
+            // to check if query matches any records
+            if (!String.IsNullOrWhiteSpace(query))
+                GamesQuery = GamesQuery.Where(m => m.Name.Contains(query));
+
+            return GamesQuery
+                .ToList()
+                .Select(Mapper.Map<Game, GameDto>);
         }
 
+
+
+
+        //Getting single Game
         // GET api/<controller>/5
         public IHttpActionResult GetGame(int id)
         {
@@ -36,6 +52,9 @@ namespace GamesRent.Controllers.Api
             return Ok(Mapper.Map<Game, GameDto>(game));
         }
 
+
+
+        //Creating Game entry
         [Authorize(Roles = "CanManageGames")]
         [HttpPost]
         // POST api/<controller>
@@ -53,6 +72,10 @@ namespace GamesRent.Controllers.Api
 
         }
 
+
+
+
+        //Updating Game info
         [Authorize(Roles = "CanManageGames")]
         [HttpPut]
         // PUT api/<controller>/5
@@ -73,6 +96,8 @@ namespace GamesRent.Controllers.Api
             _context.SaveChanges();
         }
 
+
+        //Deleting Game Info
         [Authorize(Roles = "CanManageGames")]
         [HttpDelete]
         // DELETE api/<controller>/5

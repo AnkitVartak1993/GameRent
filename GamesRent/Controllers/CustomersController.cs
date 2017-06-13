@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using GamesRent.Models;
 using System.Data.Entity;
 using GamesRent.ViewModels;
+/// <summary>
+/// Controller to handle Customer Information related actions(new, edit,details, delete)
+/// </summary>
 namespace GamesRent.Controllers
 {
     public class CustomersController : Controller

@@ -7,7 +7,9 @@ using System.Web.Http;
 using GamesRent.Models;
 using GamesRent.Dtos;
 using AutoMapper;
-
+/// <summary>
+/// API controller for handling new Rentals
+/// </summary>
 namespace GamesRent.Controllers.Api
 {
     public class NewRentalsController : ApiController

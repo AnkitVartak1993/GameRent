@@ -20,16 +20,23 @@ namespace GamesRent.Controllers.Api
             _context = new ApplicationDbContext();
             }
         // GET api/<controller>
-        public IHttpActionResult GetCustomers()
+       public IHttpActionResult GetCustomers(string query = null)
         {
+            var customersQuery = _context.Customers
+                .Include(c => c.MemberShipType);
+            // to check if query matches any records
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
 
-           var customerDtos= _context.Customers.Include(c => c.MemberShipType).ToList().Select(Mapper.Map<Customer, CustomerDto>);
-
-            return Ok(customerDtos);
-
-
+            var customerDtos = customersQuery
+                .ToList()
+                .Select(Mapper.Map<Customer, CustomerDto>);
+            
+            return Ok(customerDtos);    
         }
 
+
+        //Getting Customer Info
         // GET api/<controller>/5
         public IHttpActionResult GetCustomer(int id)
         {
@@ -40,6 +47,9 @@ namespace GamesRent.Controllers.Api
                 return NotFound();
             return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
+
+
+        //Creating Customer
         [HttpPost]
         // POST api/<controller>
         public IHttpActionResult  CreateCustomer(CustomerDto customerDto)
@@ -55,7 +65,7 @@ namespace GamesRent.Controllers.Api
 
         }
 
-
+        //Updating Customer Information
         [HttpPut]
         // PUT api/<controller>/5
         public void Put(int id, CustomerDto customer)
@@ -78,7 +88,7 @@ namespace GamesRent.Controllers.Api
             _context.SaveChanges();
         }
 
-
+        //Deleting Customer From the List 
         [HttpDelete]
         // DELETE api/<controller>/5
         public void Delete(int id)

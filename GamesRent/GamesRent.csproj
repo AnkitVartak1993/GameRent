@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201706112155333_AddedGamesoneprop.Designer.cs">
       <DependentUpon>201706112155333_AddedGamesoneprop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706132354547_AddednewAdmin.cs" />
+    <Compile Include="Migrations\201706132354547_AddednewAdmin.Designer.cs">
+      <DependentUpon>201706132354547_AddednewAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -554,6 +558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706112155333_AddedGamesoneprop.resx">
       <DependentUpon>201706112155333_AddedGamesoneprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706132354547_AddednewAdmin.resx">
+      <DependentUpon>201706132354547_AddednewAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

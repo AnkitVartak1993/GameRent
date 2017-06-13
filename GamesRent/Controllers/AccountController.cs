@@ -158,7 +158,7 @@ namespace GamesRent.Controllers
                 {
                     //temp
                     //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
-                    //var roleManager= new RoleManager<IdentityRole>(roleStore);
+                    //var roleManager = new RoleManager<IdentityRole>(roleStore);
                     //await roleManager.CreateAsync(new IdentityRole("CanManageGames"));
                     //await UserManager.AddToRoleAsync(user.Id, "CanManageGames");
 

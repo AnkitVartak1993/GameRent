@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using GamesRent.Models;
-
+/// <summary>
+/// Controller to handle Game Information related actions(new, edit,details, delete)
+/// </summary>
 namespace GamesRent.Controllers
 {
     public class GamesController : Controller
